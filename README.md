@@ -1,27 +1,67 @@
 # CRUDAngularNode
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
+Application to create, edit and list products. Made with Angular/Bootsrap [Frontend] + NodeJS/Express/MongoDB [Backend]
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Products List:
+<img src='https://i.imgur.com/55rDtk4.png' alt='app screenshot 1'/>
 
-## Code scaffolding
+Create a product:
+<img src='https://i.imgur.com/QImRW1x.png' alt='app screenshot 1'/>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Instructions <a name = "instructions"></a>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Please follow the below instructions in order to install the application on your computer.
+<br><br>
 
-## Running unit tests
+## Prerequisites
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+You must have:
+- [Visual Code](https://code.visualstudio.com/) installed, with the extension 'Live server'.
+- [NodeJS](https://nodejs.org/) installed.
+- [MongoCompass](https://www.mongodb.com/products/compass) installed.
+<br><br>
 
-## Running end-to-end tests
+### Installation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Follow the steps below in the correct order to install the project from Github:
 
-## Further help
+1- Choose a system folder, then launch a Command prompt (Windows key + R, write 'CMD' and click ok, or shift + right click > Open Powershell window, then clone the repository with the following command:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+git clone https://github.com/federicocapucci/CRUDAngularNode.git
+```
+
+2- Afterwards, open Visual code from inside the downloaded folder, (or click on file > 'Open folder' alternatively). Then run the following command in a VSC terminal, to install the necessary packages/dependencies.
+
+```
+npm install
+```
+3- Then proceed to launch the front End server in the same terminal. Should open a browser on the url http://localhost:4200
+
+```
+ng serve
+```
+
+
+3- Next, please open MongoDB Compass program. Click Connect > New Connection and connect to this URL
+
+```
+mongodb+srv://fede:Test1234@cluster0.pziijfb.mongodb.net
+```
+
+
+4- Go back to VS Code, and on a different terminal, access the 'server' folder, then run the following command to launch the backend server:
+
+```
+npm run dev
+```
+
+Application should now be running
+
+
+
+## Autor <a name = "autor"></a>
+
+- [federicocapucci](https://github.com/federicocapucci)
