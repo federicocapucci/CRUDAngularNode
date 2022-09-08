@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="fc-title mx-auto">{{title}}</div>
+                    <div>
+                        <form class="mt-4" [formGroup]="productForm" (ngSubmit)="addProduct()">
+                            <div class="mb-4">
+                                <input type="text" class="form-control form-control-lg"
+                                    placeholder="Enter the product name" formControlName="name">
+                                <div class="text-danger"
+                                    *ngIf="productForm.get('name')!.hasError('required') && productForm.get('name')!.touched">
+                                    <span>The name of the product is <strong>required</strong></span>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <input type="text" class="form-control form-control-lg" placeholder="Enter Category"
+                                    formControlName="category">
+                                <div class="text-danger"
+                                    *ngIf="productForm.get('category')!.hasError('required') && productForm.get('category')!.touched">
+                                    <span>The name of the category is <strong>required</strong></span>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <input type="text" class="form-control form-control-lg" placeholder="Enter Location"
+                                    formControlName="location">
+                                <div class="text-danger"
+                                    *ngIf="productForm.get('location')!.hasError('required') && productForm.get('location')!.touched">
+                                    <span>The name of the location is <strong>required</strong></span>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <input type="number" class="form-control form-control-lg" placeholder="Enter the price "
+                                    formControlName="price">
+                                    <div class="text-danger"
+                                    *ngIf="productForm.get('price')!.hasError('required') && productForm.get('price')!.touched">
+                                    <span>The price is <strong>required</strong></span>
+                                </div>
+                            </div>
+                            <div class="mb-4 mx-auto">
+                                <button type="submit" class="btn btn-success btn-lg float-start"
+                                [disabled]="productForm.invalid">Accept</button>
+                                <button class="btn btn-secondary btn-lg float-end" routerLink="/">Back</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
