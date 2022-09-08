@@ -11,6 +11,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./create-product.component.css']
 })
 export class CreateProductComponent implements OnInit {
+  isLoading: boolean = false;
   productForm: FormGroup;
   title: string = 'Create Product'
   id: string | null;
@@ -30,11 +31,12 @@ export class CreateProductComponent implements OnInit {
     this.id = arouter.snapshot.paramMap.get('id');
   }
 
-  ngOnInit(): void {
-    this.isItEdit();
+  ngOnInit(): void {       
+      this.isItEdit();    
   }
 
   addProduct() {
+    this.isLoading = true;
     let product: Product;
     product = this.productForm.value
 
@@ -44,12 +46,17 @@ export class CreateProductComponent implements OnInit {
           this.toastr.info('', 'Product "' + product.name + '" successfully Updated', {
             positionClass: 'toast-top-center', timeOut: 1500
           })
+          this.isLoading = false;
+
           this.router.navigate(['/'])
         });
     } else {
       this._productService.saveProduct(product).subscribe(() => {
       })
       this.toastr.success('', 'Product "' + product.name + '" successfully created', { positionClass: 'toast-top-center', timeOut: 1500 });
+
+      this.isLoading = false;
+
       this.router.navigate(['/'])
     }
   }

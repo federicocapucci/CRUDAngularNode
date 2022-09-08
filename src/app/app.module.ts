@@ -10,16 +10,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateProductComponent } from './components/create-product/create-product.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
+import { SpinnerComponent } from './components/shared/spinner/spinner.component';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateProductComponent,
-    ProductsListComponent
+    ProductsListComponent, SpinnerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, ReactiveFormsModule, CommonModule, BrowserAnimationsModule, ToastrModule.forRoot(), HttpClientModule
+    AppRoutingModule, ReactiveFormsModule, CommonModule, BrowserAnimationsModule, ToastrModule.forRoot(), HttpClientModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]
